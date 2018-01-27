@@ -1,0 +1,348 @@
+@import '_layout/_normalize';
+@import '_fonts';
+@import '_variables';
+@import '_layout/_layout';
+
+:root {
+    --bg-color: #ccc;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+
+/* Layout */
+
+.ba-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 1200px;
+}
+
+
+/* Typography */
+
+a,
+input[type="submit"],
+input[type="button"],
+button {
+    transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+
+input[type="submit"],
+input[type="button"],
+button,
+.ba-button {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    border: 2px solid $black;
+    background: transparent;
+    padding: 0 20px;
+
+    &:hover{
+        background: $white;
+    }
+
+
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover,
+.ba-button:hover {}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+    transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+
+    background: transparent;
+    border: 2px solid $black;
+    outline: none;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 15px;
+
+    font-family: $font-input;
+    font-size: 12px;
+
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+    background: #fff;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+
+// INTRO Section
+
+.ba-intro{
+    color: $white;
+    background: url('../img/bridge.jpg') center center no-repeat;
+    background-size: cover;
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__title{
+        font-family: $font-headings;
+      
+        letter-spacing: 0.42em;
+
+        font-size: 18px;
+
+        @media (min-width: $bp-sm) {
+            font-size: 51px;
+        }
+        @media (min-width: $bp-md) {
+            font-size: 54px;
+        }
+    }
+
+    &__subtitle{
+        font-family: $font-main;
+        
+        font-size: 8px;
+        letter-spacing: 0.14em;
+
+        @media (min-width: $bp-sm) {
+            font-size: 19px;
+        }
+        @media (min-width: $bp-md) {
+            font-size: 21px;
+        }
+
+    }
+}
+
+// MENU
+
+.ba-menu{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &__item{
+        position: fixed;
+        display: inline-block;
+        min-width: 100px;
+        text-align: center;
+
+        z-index: 10;
+
+        &--work{
+            left: 30px;
+            bottom: 55px;
+        }
+        &--about{
+            right: 30px;
+            top: 55px;
+        }
+        &--contact{
+            bottom: 55px;
+            right: 30px;
+        }
+    }
+    
+
+    &-desktope{
+        
+        a {
+            font: 700 12px/1 $font-main;
+            color: $white;
+            letter-spacing: 0.06px;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            position: relative;
+
+            &::before, &::after{
+                position: absolute;
+                content: '';
+                width: 2px;
+                height: 30px;
+                background: currentColor;
+
+                left: 50%;
+                transition: all .3s linear;
+
+            }
+            &::before{
+                top: -50px;
+            }
+            &::after{
+                bottom: -50px;
+            }
+
+            &:hover{
+                color: darken($white, 20%);
+
+                &::before{
+                    top: -35px;
+                }
+                &::after{
+                    bottom: -35px;
+                }
+            }
+        }
+    }
+
+    &-mobile{
+        display: none;
+    }
+}
+
+.ba-logo{
+
+    position: fixed;
+    left: 55px;
+    top: 40px;
+
+    z-index: 10;
+
+    img{
+        display: block;
+    }
+
+}
+
+// WORK section
+.ba-work{
+    background: #eee;
+}
+
+
+// ABOUT section
+.ba-about{
+    background: $black;
+    color: $white;
+    display: flex;
+
+    &__img{
+        &--small {
+            display: block;
+            @media (min-width: $bp-md) {
+                display: none;
+            }
+        }
+        &--big {
+            display: none;
+            @media (min-width: $bp-md+1) {
+                display: block;
+            }
+        }
+        
+
+    }
+
+    &__column{
+        &--left{
+            float: left;
+            width: 60%;
+        }
+
+        &--right{
+            float:right;
+            width: 40%;
+        }
+        img{
+            height: 100vh;
+        }
+    }
+
+    &__suptitle{
+        text-transform: uppercase;
+        font-size: 23px;
+
+        @media (min-width: $bp-sm) {
+            font-size: 30px;
+        }
+        @media (min-width: $bp-md) {
+            font-size: 21px;
+        }
+    }
+    &__title{
+        font-size: 37px;
+
+        @media (min-width: $bp-sm) {
+            font-size: 87px;
+        }
+        @media (min-width: $bp-md) {
+            font-size: 60px;
+        }
+    }
+    &__text{
+        font-size: 10px;
+
+        @media (min-width: $bp-sm) {
+            font-size: 24px;
+        }
+        @media (min-width: $bp-md) {
+            font-size: 18px;
+        }
+    }
+}
+
+// CONTACT
+.ba-contact{
+    background: $white url('../img/contact.jpg') center center no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+
+    &__form{
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    &__footer{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        color: $black;
+        
+        li{
+            display: inline-block;
+            font-weight: 700;
+        }
+
+        a, span{
+            font-family: $font-input-2;
+            font-weight: 400;
+            text-decoration: none;
+            color: currentColor;
+            &:hover{
+                color: lighten($black, 30%);
+            }
+        }
+    }
+}
