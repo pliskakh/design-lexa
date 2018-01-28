@@ -83,7 +83,10 @@ select:focus {
 }
 
 textarea {
-    height: 161px;
+    min-height: 58px;
+    @media(min-width: $bp-xs) {
+        min-height: 161px;
+    }
     resize: none;
 }
 
@@ -261,96 +264,4 @@ textarea {
     }
 }
 
-// CONTACT section
-.ba-contact {
-    background: $white url('../img/contact.jpg') center center no-repeat;
-    background-size: cover;
-    &-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    &__title {
-        font: 400 32px/1 $font-headings;
-        letter-spacing: .04em;
-        text-transform: uppercase;
-        margin-bottom: 30px;
-    }
-    &__form {
-        width: 60%;
-        margin: 0 auto;
-    }
-    &__footer {
-        margin: 60px 0 0;
-        padding: 0;
-        list-style: none;
-        justify-content: space-between;
-        color: $black;
-        li {
-            display: block;
-            text-align: left;
-            margin-bottom: 5px;
-            @media(min-width: $bp-sm) {
-                display: inline-block;
-                text-align: center;
-                margin-bottom: 0;
-            }
-            font-weight: 700;
-            &:not(:first-child) {
-                padding-left: 0px;
-                @media(min-width: $bp-sm) {
-                    padding-left: 20px;
-                }
-                @media(min-width: $bp-md) {
-                    padding-left: 100px;
-                }
-            }
-        }
-        a,
-        span {
-            font-family: $font-input-2;
-            font-weight: 400;
-            text-decoration: none;
-            color: currentColor;
-            &:hover {
-                color: $white;
-            }
-        }
-    }
-    button {
-        margin-top: 20px;
-        @media (min-width: $bp-sm) {
-            margin-top: 40px;
-        }
-        &:hover {
-            color: $white;
-            border-color: $white;
-            background: transparent;
-        }
-    }
-}
-
-.ba-grid+.ba-grid {
-    margin-top: 15px;
-    @media(min-width: $bp-md) {
-        margin-top: 30px;
-    }
-}
-
-.ba-row {
-    .ba-width {
-        &-custom {
-            &-100 {
-                width: 100%;
-                margin-bottom: 15px;
-                &--nomargin {
-                    margin-bottom: 0;
-                }
-                @media(min-width: $bp-sm) {
-                    width: 50%;
-                    margin-bottom: 0;
-                }
-            }
-        }
-    }
-}
+@import 'contact';
