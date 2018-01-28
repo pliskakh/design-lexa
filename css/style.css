@@ -553,6 +553,14 @@ body, html {
   padding-left: 0;
 }
 
+.ba-width-1-1 {
+  width: 100%;
+}
+
+.ba-width-1-2, .ba-width-2-4, .ba-width-3-6 {
+  width: 50%;
+}
+
 .ba-width-1-2, .ba-width-2-4, .ba-width-3-6 {
   width: 50%;
 }
@@ -613,10 +621,6 @@ body, html {
   width: 10%;
 }
 
-:root {
-  --bg-color: #ccc;
-}
-
 h1,
 h2,
 h3,
@@ -626,15 +630,11 @@ h6 {
   margin: 0;
 }
 
-body {
-  background-color: var(--bg-color);
-}
-
 /* Layout */
 .ba-container {
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 1170px;
 }
 
 /* Typography */
@@ -680,6 +680,17 @@ select {
   padding: 0 15px;
   font-family: "Roboto", sans-serif;
   font-size: 12px;
+  width: 100%;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+input[type="number"]::placeholder,
+input[type="tel"]::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: #000000;
 }
 
 input[type="text"]:focus,
@@ -693,7 +704,7 @@ select:focus {
 }
 
 textarea {
-  height: 100px;
+  height: 161px;
   resize: none;
 }
 
@@ -772,6 +783,16 @@ textarea {
   right: 30px;
 }
 
+.ba-menu-desktope {
+  display: none;
+}
+
+@media (min-width: 940px) {
+  .ba-menu-desktope {
+    display: block;
+  }
+}
+
 .ba-menu-desktope a {
   font: 700 12px/1 "Candara", sans-serif;
   color: #ffffff;
@@ -822,8 +843,9 @@ textarea {
   z-index: 10;
 }
 
-.ba-logo img {
+.ba-logo svg {
   display: block;
+  fill: #ffffff;
 }
 
 .ba-work {
@@ -833,40 +855,32 @@ textarea {
 .ba-about {
   background: #000000;
   color: #ffffff;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.ba-about__column {
   display: flex;
 }
 
-.ba-about__img--small {
-  display: block;
-}
-
-@media (min-width: 992px) {
-  .ba-about__img--small {
-    display: none;
-  }
-}
-
-.ba-about__img--big {
-  display: none;
-}
-
-@media (min-width: 993px) {
-  .ba-about__img--big {
-    display: block;
-  }
-}
-
 .ba-about__column--left {
-  float: left;
-  width: 60%;
+  max-width: 650px;
 }
 
 .ba-about__column--right {
-  float: right;
-  width: 40%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 1;
+  width: 50%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
-.ba-about__column img {
+.ba-about__column--right img {
   height: 100vh;
 }
 
@@ -922,34 +936,116 @@ textarea {
 .ba-contact {
   background: #ffffff url("../img/contact.jpg") center center no-repeat;
   background-size: cover;
+}
+
+.ba-contact-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ba-contact__title {
+  font: 400 32px/1 "Playfair Display", serif;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-bottom: 30px;
 }
 
 .ba-contact__form {
-  max-width: 800px;
+  width: 60%;
   margin: 0 auto;
 }
 
 .ba-contact__footer {
-  margin: 0;
+  margin: 60px 0 0;
   padding: 0;
   list-style: none;
+  justify-content: space-between;
   color: #000000;
 }
 
 .ba-contact__footer li {
-  display: inline-block;
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
   font-weight: 700;
 }
 
-.ba-contact__footer a, .ba-contact__footer span {
+@media (min-width: 768px) {
+  .ba-contact__footer li {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+
+.ba-contact__footer li:not(:first-child) {
+  padding-left: 0px;
+}
+
+@media (min-width: 768px) {
+  .ba-contact__footer li:not(:first-child) {
+    padding-left: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .ba-contact__footer li:not(:first-child) {
+    padding-left: 100px;
+  }
+}
+
+.ba-contact__footer a,
+.ba-contact__footer span {
   font-family: "Microsoft Tai Le", sans-serif;
   font-weight: 400;
   text-decoration: none;
   color: currentColor;
 }
 
-.ba-contact__footer a:hover, .ba-contact__footer span:hover {
-  color: #4d4d4d;
+.ba-contact__footer a:hover,
+.ba-contact__footer span:hover {
+  color: #ffffff;
+}
+
+.ba-contact button {
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .ba-contact button {
+    margin-top: 40px;
+  }
+}
+
+.ba-contact button:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+  background: transparent;
+}
+
+.ba-grid + .ba-grid {
+  margin-top: 15px;
+}
+
+@media (min-width: 992px) {
+  .ba-grid + .ba-grid {
+    margin-top: 30px;
+  }
+}
+
+.ba-row .ba-width-custom-100 {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.ba-row .ba-width-custom-100--nomargin {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .ba-row .ba-width-custom-100 {
+    width: 50%;
+    margin-bottom: 0;
+  }
 }

@@ -2,11 +2,6 @@
 @import '_fonts';
 @import '_variables';
 @import '_layout/_layout';
-
-:root {
-    --bg-color: #ccc;
-}
-
 h1,
 h2,
 h3,
@@ -16,17 +11,13 @@ h6 {
     margin: 0;
 }
 
-body {
-    background-color: var(--bg-color);
-}
-
 
 /* Layout */
 
 .ba-container {
-    padding-left: 20px;
-    padding-right: 20px;
-    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 1170px;
 }
 
 
@@ -49,12 +40,9 @@ button,
     border: 2px solid $black;
     background: transparent;
     padding: 0 20px;
-
-    &:hover{
+    &:hover {
         background: $white;
     }
-
-
 }
 
 input[type="submit"]:hover,
@@ -70,17 +58,18 @@ input[type="tel"],
 textarea,
 select {
     transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
-
     background: transparent;
     border: 2px solid $black;
     outline: none;
     height: 34px;
     line-height: 34px;
     padding: 0 15px;
-
     font-family: $font-input;
     font-size: 12px;
-
+    width: 100%;
+    &::placeholder {
+        color: $black;
+    }
 }
 
 input[type="text"]:focus,
@@ -94,31 +83,23 @@ select:focus {
 }
 
 textarea {
-    height: 100px;
+    height: 161px;
     resize: none;
 }
 
-
 // INTRO Section
-
-.ba-intro{
+.ba-intro {
     color: $white;
     background: url('../img/bridge.jpg') center center no-repeat;
     background-size: cover;
-
     height: 100vh;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    &__title{
+    &__title {
         font-family: $font-headings;
-      
         letter-spacing: 0.42em;
-
         font-size: 18px;
-
         @media (min-width: $bp-sm) {
             font-size: 51px;
         }
@@ -126,162 +107,133 @@ textarea {
             font-size: 54px;
         }
     }
-
-    &__subtitle{
+    &__subtitle {
         font-family: $font-main;
-        
         font-size: 8px;
         letter-spacing: 0.14em;
-
         @media (min-width: $bp-sm) {
             font-size: 19px;
         }
         @media (min-width: $bp-md) {
             font-size: 21px;
         }
-
     }
 }
 
 // MENU
-
-.ba-menu{
+.ba-menu {
     margin: 0;
     padding: 0;
     list-style: none;
-
-    &__item{
+    &__item {
         position: fixed;
         display: inline-block;
         min-width: 100px;
         text-align: center;
-
         z-index: 10;
-
-        &--work{
+        &--work {
             left: 30px;
             bottom: 55px;
         }
-        &--about{
+        &--about {
             right: 30px;
             top: 55px;
         }
-        &--contact{
+        &--contact {
             bottom: 55px;
             right: 30px;
         }
     }
-    
-
-    &-desktope{
-        
+    &-desktope {
+        display: none;
+        @media (min-width: 940px) {
+            display: block;
+        }
         a {
             font: 700 12px/1 $font-main;
             color: $white;
             letter-spacing: 0.06px;
             text-transform: uppercase;
             text-decoration: none;
-
             position: relative;
-
-            &::before, &::after{
+            &::before,
+            &::after {
                 position: absolute;
                 content: '';
                 width: 2px;
                 height: 30px;
                 background: currentColor;
-
                 left: 50%;
                 transition: all .3s linear;
-
             }
-            &::before{
+            &::before {
                 top: -50px;
             }
-            &::after{
+            &::after {
                 bottom: -50px;
             }
-
-            &:hover{
+            &:hover {
                 color: darken($white, 20%);
-
-                &::before{
+                &::before {
                     top: -35px;
                 }
-                &::after{
+                &::after {
                     bottom: -35px;
                 }
             }
         }
     }
-
-    &-mobile{
+    &-mobile {
         display: none;
     }
 }
 
-.ba-logo{
-
+.ba-logo {
     position: fixed;
     left: 55px;
     top: 40px;
-
     z-index: 10;
-
-    img{
+    svg {
         display: block;
+        fill: $white;
     }
-
 }
 
 // WORK section
-.ba-work{
+.ba-work {
     background: #eee;
 }
 
-
 // ABOUT section
-.ba-about{
+.ba-about {
     background: $black;
     color: $white;
-    display: flex;
-
-    &__img{
-        &--small {
-            display: block;
-            @media (min-width: $bp-md) {
-                display: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    &__column {
+        display: flex;
+        &--left {
+            max-width: 650px;
+        }
+        &--right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            z-index: 1;
+            width: 50%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            img {
+                height: 100vh;
             }
         }
-        &--big {
-            display: none;
-            @media (min-width: $bp-md+1) {
-                display: block;
-            }
-        }
-        
-
     }
-
-    &__column{
-        &--left{
-            float: left;
-            width: 60%;
-        }
-
-        &--right{
-            float:right;
-            width: 40%;
-        }
-        img{
-            height: 100vh;
-        }
-    }
-
-    &__suptitle{
+    &__suptitle {
         text-transform: uppercase;
         font-size: 23px;
-
         @media (min-width: $bp-sm) {
             font-size: 30px;
         }
@@ -289,9 +241,8 @@ textarea {
             font-size: 21px;
         }
     }
-    &__title{
+    &__title {
         font-size: 37px;
-
         @media (min-width: $bp-sm) {
             font-size: 87px;
         }
@@ -299,9 +250,8 @@ textarea {
             font-size: 60px;
         }
     }
-    &__text{
+    &__text {
         font-size: 10px;
-
         @media (min-width: $bp-sm) {
             font-size: 24px;
         }
@@ -311,37 +261,95 @@ textarea {
     }
 }
 
-// CONTACT
-.ba-contact{
+// CONTACT section
+.ba-contact {
     background: $white url('../img/contact.jpg') center center no-repeat;
     background-size: cover;
-
-    display: flex;
-    justify-content: center;
-
-    &__form{
-        max-width: 800px;
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__title {
+        font: 400 32px/1 $font-headings;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    &__form {
+        width: 60%;
         margin: 0 auto;
     }
-    &__footer{
-        margin: 0;
+    &__footer {
+        margin: 60px 0 0;
         padding: 0;
         list-style: none;
-
+        justify-content: space-between;
         color: $black;
-        
-        li{
-            display: inline-block;
+        li {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            @media(min-width: $bp-sm) {
+                display: inline-block;
+                text-align: center;
+                margin-bottom: 0;
+            }
             font-weight: 700;
+            &:not(:first-child) {
+                padding-left: 0px;
+                @media(min-width: $bp-sm) {
+                    padding-left: 20px;
+                }
+                @media(min-width: $bp-md) {
+                    padding-left: 100px;
+                }
+            }
         }
-
-        a, span{
+        a,
+        span {
             font-family: $font-input-2;
             font-weight: 400;
             text-decoration: none;
             color: currentColor;
-            &:hover{
-                color: lighten($black, 30%);
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+    button {
+        margin-top: 20px;
+        @media (min-width: $bp-sm) {
+            margin-top: 40px;
+        }
+        &:hover {
+            color: $white;
+            border-color: $white;
+            background: transparent;
+        }
+    }
+}
+
+.ba-grid+.ba-grid {
+    margin-top: 15px;
+    @media(min-width: $bp-md) {
+        margin-top: 30px;
+    }
+}
+
+.ba-row {
+    .ba-width {
+        &-custom {
+            &-100 {
+                width: 100%;
+                margin-bottom: 15px;
+                &--nomargin {
+                    margin-bottom: 0;
+                }
+                @media(min-width: $bp-sm) {
+                    width: 50%;
+                    margin-bottom: 0;
+                }
             }
         }
     }
