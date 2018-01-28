@@ -1,0 +1,56 @@
+// ABOUT section
+.ba-about {
+    background: $black;
+    color: $white;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    &__column {
+        display: flex;
+        &--left {
+            max-width: 650px;
+        }
+        &--right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            z-index: 1;
+            width: 50%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            img {
+                height: 100vh;
+            }
+        }
+    }
+    &__suptitle {
+        text-transform: uppercase;
+        font-size: 23px;
+        @media (min-width: $bp-sm) {
+            font-size: 30px;
+        }
+        @media (min-width: $bp-md) {
+            font-size: 21px;
+        }
+    }
+    &__title {
+        font-size: 37px;
+        @media (min-width: $bp-sm) {
+            font-size: 87px;
+        }
+        @media (min-width: $bp-md) {
+            font-size: 60px;
+        }
+    }
+    &__text {
+        font-size: 10px;
+        @media (min-width: $bp-sm) {
+            font-size: 24px;
+        }
+        @media (min-width: $bp-md) {
+            font-size: 18px;
+        }
+    }
+}
