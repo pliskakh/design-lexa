@@ -85,6 +85,9 @@ input[type="tel"]:focus,
 textarea:focus,
 select:focus {
     background: #fff;
+    &::placeholder {
+        color: transparent;
+    }
 }
 
 textarea {

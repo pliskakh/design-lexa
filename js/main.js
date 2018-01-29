@@ -5,8 +5,7 @@
 
 		var links = $('.ba-menu-link'),
 				logo = $('.ba-logo-svg');
-		console.log(links);
-
+		
 		$('#fullpage').fullpage({
 			anchors: ['intro', 'work', 'about', 'contact'],
 
@@ -16,8 +15,7 @@
 				if (anchorLink == 'intro' || anchorLink == 'about') {
 					logo.removeClass('ba-active');
 					links.removeClass('ba-active');
-				}
-				if (anchorLink == 'work' || anchorLink == 'contact') {
+				} else{
 					logo.addClass('ba-active');
 					links.addClass('ba-active');
 				}
@@ -25,12 +23,12 @@
 		});
 
 		new TypeIt('.ba-intro__subtitle', {
-			speed: 100,
+			speed: 80,
 			autoStart: false,
 			cursor: false,
 		})
 			.type('Brand designer | ')
-			.pause(500)
+			.pause(400)
 			.type('web designer')
 	});
 
@@ -69,38 +67,31 @@
 
 		responsive: [
 			{
-				breakpoint: 1024,
+				breakpoint: 500,
 				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 3,
-					infinite: true,
-					slidesPerRow: 3,
-					rows: 2,
-				}
-			},
-			{
-				breakpoint: 900,
-				settings: {
-					slidesToShow: 3,
-					slidesToScroll: 3,
-					infinite: true,
-					slidesPerRow: 3,
-					rows: 2,
-				}
-			},
-			{
-				breakpoint: 480,
-				settings: {
-					//dots: true,
+					dots: true,
 					slidesToShow: 1,
 					slidesToScroll: 1,
 					slidesPerRow: 1,
 					rows: 1
 				}
+			},
+			{
+				breakpoint: 900,
+				settings: {
+					infinite: true,
+					slidesPerRow: 2,
+					rows: 2,
+				}
+			},
+			{
+				breakpoint: 1024,
+				settings: {
+					infinite: true,
+					slidesPerRow: 3,
+					rows: 2,
+				}
 			}
-			// You can unslick at a given breakpoint now by adding:
-			// settings: "unslick"
-			// instead of a settings object
 		]
 	});
 
