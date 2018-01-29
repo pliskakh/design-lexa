@@ -880,6 +880,7 @@ textarea {
   left: 55px;
   top: 40px;
   z-index: 10;
+  transition: all .3s ease-in;
 }
 
 .ba-logo-svg {
@@ -890,6 +891,10 @@ textarea {
 
 .ba-logo-svg.ba-active {
   fill: #000000;
+}
+
+.ba-logo:hover {
+  transform: scale(1.2);
 }
 
 .ba-work {
@@ -1086,6 +1091,7 @@ textarea {
 .ba-about__column--left {
   width: 70%;
   margin: 0 auto;
+  z-index: 2;
 }
 
 .ba-about__column--right {
@@ -1095,14 +1101,29 @@ textarea {
   height: 100%;
   z-index: 1;
   width: 50%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
   display: none;
+}
+
+@media (min-width: 992px) {
+  .ba-about__column--right {
+    display: flex;
+  }
 }
 
 .ba-about__column--right img {
   height: 100vh;
+}
+
+.ba-about__img--small {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .ba-about__img--small {
+    display: none;
+  }
 }
 
 .ba-about__suptitle {

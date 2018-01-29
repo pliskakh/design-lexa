@@ -207,6 +207,7 @@ textarea {
     left: 55px;
     top: 40px;
     z-index: 10;
+    transition: all .3s ease-in;
     &-svg {
         display: block;
         fill: $white;
@@ -214,6 +215,9 @@ textarea {
         &.ba-active{
             fill: $black;
         }
+    }
+    &:hover{
+        transform: scale(1.2);
     }
 }
 
