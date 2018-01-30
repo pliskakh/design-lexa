@@ -8,7 +8,7 @@
     &__column {
         display: flex;
         &--left {
-            width: 70%;
+            width: 50%;
             margin: 0 auto;
             z-index: 2;
         }
@@ -16,11 +16,13 @@
             position: absolute;
             top: 0;
             right: 0;
-            height: 100%;
             z-index: 1;
-            width: 50%;
+            //width: 50%;
+
+            justify-content: flex-end;
             
             display: none;
+
             @media(min-width: $bp-md){
                 display: flex;
             }

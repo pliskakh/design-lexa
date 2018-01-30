@@ -2,6 +2,9 @@
 @import '_fonts';
 @import '_variables';
 @import '_layout/_layout';
+
+//@import '_layout/jquery.fullPage.css';
+
 h1,
 h2,
 h3,
@@ -221,10 +224,6 @@ textarea {
     }
 }
 
-// WORK section
-.ba-work {
-    background: #eee;
-}
 
 @import 'slick';
 @import 'works';

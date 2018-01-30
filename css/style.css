@@ -897,10 +897,6 @@ textarea {
   transform: scale(1.2);
 }
 
-.ba-work {
-  background: #eee;
-}
-
 /* Slider */
 .slick-slider {
   position: relative;
@@ -1007,7 +1003,18 @@ textarea {
 }
 
 .ba-work {
-  background: #eee;
+  background: #ffffff;
+}
+
+.ba-work__scroll {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .ba-work__scroll {
+    margin-top: 10px;
+    display: block;
+  }
 }
 
 .ba-row-works .ba-col-custom {
@@ -1076,6 +1083,59 @@ textarea {
   background-color: red;
 }
 
+.ba-item {
+  text-align: center;
+  position: relative;
+}
+
+.ba-item img {
+  display: block;
+  width: 100%;
+}
+
+.ba-item__title {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  margin-bottom: 10px;
+}
+
+.ba-item__link {
+  background-color: #951d1d;
+  color: #ffffff;
+  text-decoration: none;
+  border: none;
+}
+
+.ba-item__link:hover {
+  color: #951d1d;
+}
+
+.ba-item__caption {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .5s;
+  background-color: black;
+}
+
+.ba-item__caption-body {
+  padding: 0 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ba-item:hover .ba-item__caption {
+  opacity: 1;
+}
+
 .ba-about {
   background: #000000;
   color: #ffffff;
@@ -1089,7 +1149,7 @@ textarea {
 }
 
 .ba-about__column--left {
-  width: 70%;
+  width: 50%;
   margin: 0 auto;
   z-index: 2;
 }
@@ -1098,9 +1158,8 @@ textarea {
   position: absolute;
   top: 0;
   right: 0;
-  height: 100%;
   z-index: 1;
-  width: 50%;
+  justify-content: flex-end;
   display: none;
 }
 
