@@ -2,14 +2,20 @@
     background: $white;
 
     &__scroll{
+        svg {
+            fill: $black;
+            width: 40px;
+            &:hover{
+                fill: $button-red;
+            }
+        }   
+
         display: none;
+
         @media(min-width: $bp-lg){
             margin-top: 10px;
-            display: block;
-        }
-        
-
-        
+            display: inline-block;
+        } 
     }
 }
 

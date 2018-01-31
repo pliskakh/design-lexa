@@ -1010,10 +1010,19 @@ textarea {
   display: none;
 }
 
+.ba-work__scroll svg {
+  fill: #000000;
+  width: 40px;
+}
+
+.ba-work__scroll svg:hover {
+  fill: #951d1d;
+}
+
 @media (min-width: 1200px) {
   .ba-work__scroll {
     margin-top: 10px;
-    display: block;
+    display: inline-block;
   }
 }
 
@@ -1150,7 +1159,7 @@ textarea {
 
 .ba-about__column--left {
   width: 50%;
-  margin: 0 auto;
+  margin: 0 12% auto;
   z-index: 2;
 }
 
