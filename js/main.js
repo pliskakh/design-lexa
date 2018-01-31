@@ -5,7 +5,7 @@
 
 		var links = $('.ba-menu-link'),
 				logo = $('.ba-logo-svg');
-		
+
 		$('#fullpage').fullpage({
 			anchors: ['intro', 'work', 'about', 'contact'],
 
@@ -55,7 +55,6 @@
 
 	// window.onload = initSlider;
 
-
 	$('.ba-slider').slick({
 		infinite: true,
 		arrows: false,
@@ -93,6 +92,15 @@
 				}
 			}
 		]
+	});
+
+	$('.ba-project__slider').slick({
+		infinite: true,
+		dots: true,
+		arrows: false,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1
 	});
 
 })(jQuery);

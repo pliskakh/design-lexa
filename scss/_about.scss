@@ -5,12 +5,23 @@
     position: relative;
     height: 100%;
     width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     &__column {
         display: flex;
         &--left {
-            width: 50%;
-            margin: 0 12% auto;
+            width: 100%;
+            margin: 0 auto;
             z-index: 2;
+            padding: 0 5%;
+            @media(min-width: $bp-md){
+                width: 50%;
+                margin: 0 12% auto;
+            }
+            
         }
         &--right {
             position: absolute;
@@ -41,6 +52,8 @@
     }
     &__suptitle {
         text-transform: uppercase;
+        margin: 30px 0;
+        letter-spacing: 0.14em;
         font-size: 23px;
         @media (min-width: $bp-sm) {
             font-size: 30px;
@@ -51,6 +64,8 @@
     }
     &__title {
         font-size: 37px;
+        padding-bottom: 40px;
+        letter-spacing: 0.04em;
         @media (min-width: $bp-sm) {
             font-size: 87px;
         }
@@ -59,7 +74,11 @@
         }
     }
     &__text {
+        font-family: $font-main;
         font-size: 10px;
+        letter-spacing: 0.04em;
+        margin: 0;
+        line-height: 1.3;
         @media (min-width: $bp-sm) {
             font-size: 24px;
         }
