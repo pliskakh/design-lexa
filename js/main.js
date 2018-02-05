@@ -4,7 +4,8 @@
 	$(document).ready(function () {
 
 		var links = $('.ba-menu-link'),
-				logo = $('.ba-logo-svg');
+				logo = $('.ba-logo-svg'),
+				burger = $('.burger-menu-open-svg');
 
 		$('#fullpage').fullpage({
 			anchors: ['intro', 'work', 'about', 'contact'],
@@ -15,9 +16,11 @@
 				if (anchorLink == 'intro' || anchorLink == 'about') {
 					logo.removeClass('ba-active');
 					links.removeClass('ba-active');
+					burger.removeClass('ba-active');
 				} else{
 					logo.addClass('ba-active');
 					links.addClass('ba-active');
+					burger.addClass('ba-active');
 				}
 			}
 		});
@@ -59,6 +62,7 @@
 		infinite: true,
 		arrows: false,
 		speed: 300,
+		adaptiveHeight: true,
 		// slidesToShow: 4,
 		// slidesToScroll: 4,
 		slidesPerRow: 3,
@@ -98,9 +102,34 @@
 		infinite: true,
 		dots: true,
 		arrows: false,
-		speed: 500,
+		autoplay: true,
+		autoplaySpeed: 300,
+		adaptiveHeight: true,
+		speed: 400,
 		slidesToShow: 1,
 		slidesToScroll: 1
 	});
+
+	var burgerButton = document.querySelector('.burger-menu-open'),
+	burgerCloseButton = document.querySelector('.burger-menu-close'),
+	menuToggle = document.querySelector('.ba-mobile-menu');
+
+	burgerButton.addEventListener('click', function(){
+			menuToggle.classList.add('ba-show');
+	});
+
+	burgerCloseButton.addEventListener('click', function(){
+		menuToggle.classList.remove('ba-show');
+	});
+
+	var mobUl = document.querySelectorAll('.ba-mobile-list a');
+	//console.log(mobUl);
+	
+	mobUl.forEach(function(item){
+		item.addEventListener('click', function () {
+			menuToggle.classList.remove('ba-show');
+		});
+	});
+	
 
 })(jQuery);

@@ -19,6 +19,36 @@
 <body>
 	<!-- start your awesome code here  -->
 
+<nav class="ba-mobile-menu">
+<a href="#" class="burger-menu-close">
+		<svg width="50px" height="50px">
+			<use xlink:href="#cancel" />
+		</svg>
+	</a>
+	<ul class="ba-mobile-list">
+		<li>
+			<a href="#intro">
+				Home
+			</a>
+		</li>
+		<li>
+			<a href="#work">
+				Portfolio
+			</a>
+		</li>
+		<li>
+			<a href="#about">
+				About
+			</a>
+		</li>
+		<li>
+			<a href="#contact">
+				Contact
+			</a>
+		</li>
+	</ul>
+</nav>
+
 	<div class="ba-header">
 		<a class="ba-logo" href="#intro">
 			<svg class="ba-logo-svg" width="47" height="46">
@@ -40,6 +70,12 @@
 			</ul>
 			<!-- /.ba-menu-large -->
 		</nav>
+
+		<button class="burger-menu-open">
+			<svg class="burger-menu-open-svg" width="25" height="25">
+				<use xlink:href="#hamburger-menu" />
+			</svg>
+		</button>
 
 	</div>
 	<!-- /.ba-header -->
@@ -214,6 +250,9 @@
 	<!-- svg area -->
 	<svg style="position: absolute; width: 0; height: 0; overflow: hidden;">
 		<defs>
+			<symbol id="hamburger-menu" viewBox="0 0 459 459">
+				<path d="M0,382.5h459v-51H0V382.5z M0,255h459v-51H0V255z M0,76.5v51h459v-51H0z" />
+			</symbol>
 			<symbol id="logo" viewBox="0 0 242.2 210.1">
 				<g id="g4508_1_" transform="translate(986.59698,-189.49253)">
 					<path class="icon-first" d="M-985.7,398l119.5-207.5l20.1,35L-946.6,399L-985.7,398z" />
@@ -249,6 +288,15 @@
 					</g>
 				</g>
 			</symbol>
+
+<symbol id="cancel" viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982;">
+	<g id="Close">
+		<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312   c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312   l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937   c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"
+		   />
+	</g>
+</symbol>
+
+
 		</defs>
 	</svg>
 
@@ -256,7 +304,7 @@
 
 	<script src="js/jquery.js"></script>
 	<script src="js/slick.js"></script>
-	<script src="js/TweenMax.min.js"></script>
+	<!-- <script src="js/TweenMax.min.js"></script> -->
 	<script src="js/jquery.fullpage.js"></script>
 	<script src="js/typeit.min.js"></script>
 
