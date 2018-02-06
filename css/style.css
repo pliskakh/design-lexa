@@ -952,7 +952,7 @@ textarea {
 
 @media (min-width: 500px) {
   .ba-mobile-list li {
-    padding-bottom: 70px;
+    padding-bottom: 60px;
   }
 }
 
@@ -1566,8 +1566,14 @@ textarea {
 }
 
 .ba-project-description, .ba-project-photo {
-  width: 50%;
-  padding-left: 30px;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .ba-project-description, .ba-project-photo {
+    width: 50%;
+    padding-left: 30px;
+  }
 }
 
 .ba-project-description {
@@ -1577,10 +1583,18 @@ textarea {
   justify-content: center;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .ba-project-description {
     order: 0;
   }
+}
+
+.ba-project-photo {
+  padding-top: 100px;
+}
+
+.ba-project-photo img {
+  margin: 0 auto;
 }
 
 .ba-project__skills {
@@ -1609,6 +1623,12 @@ textarea {
   background: #4f544f;
 }
 
+@media (max-width: 480px) {
+  .ba-project__skills {
+    display: none;
+  }
+}
+
 .ba-project__title {
   display: none;
 }
@@ -1626,6 +1646,12 @@ textarea {
   margin: 0 0 15px;
   font-size: 16px;
   font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .ba-project__subtitle--skills {
+    display: none;
+  }
 }
 
 .ba-project__descr {

@@ -70,7 +70,7 @@
 
 		responsive: [
 			{
-				breakpoint: 500,
+				breakpoint: 768,
 				settings: {
 					dots: true,
 					slidesToShow: 1,
@@ -103,7 +103,7 @@
 		dots: true,
 		arrows: false,
 		autoplay: true,
-		autoplaySpeed: 300,
+		//autoplaySpeed: 300,
 		adaptiveHeight: true,
 		speed: 400,
 		slidesToShow: 1,

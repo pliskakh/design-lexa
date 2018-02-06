@@ -267,7 +267,7 @@ textarea {
             padding-bottom: 30px;
             position: relative;
             @media(min-width: 500px){
-                padding-bottom: 70px;
+                padding-bottom: 60px;
             }
             &:not(:last-child)::after {
                 content: "";
